@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#container .container_line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+#container .bar {
+  width: 100%;
+  height: 10px;
+  margin: 0 5px 10px 5px;
+}
+
+#container .bar .inner_bar {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}

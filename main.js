@@ -10,9 +10,16 @@ function logChildren(line) {
   if (bars.length === 1) {
     bars[0].style.width = "100%";
   } else {
-    const number = Math.random() * 100;
-    // Set the first bar's width to the number, and set the second bar's width to 100% - the number.
-    bars[0].style.width = `${number}%`;
-    bars[1].style.width = `${100 - number}%`;
+    const numbers = bars.map(_ => Math.random() * (100 / bars.length));
+    bars.forEach((bar, i) => (bar.style.width = `${numbers[i]}%`));
   }
+  // Test animation
+  bars.forEach(animateBar);
+}
+
+// Simulate an animation using setTimeout
+function animateBar({ firstChild }) {
+  firstChild.classList.add("show");
+  firstChild.style.backgroundColor =
+    Math.floor(Math.random() * 100) > 75 ? "red" : "white";
 }
